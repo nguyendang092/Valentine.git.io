@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine</title>
+    <title>Làm người Yêu Tớ Nhé !</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
 </link>
@@ -72,19 +72,22 @@
             </div>
         </div>   
     </main>
-    <audio src="./sound/Love.mp3" autoplay></audio>
+    <audio id="myAudio" src="./sound/Love.mp3" muted autoplay></audio>
     <script>
+        const myAudio = document.getElementById("myAudio")
         const yes = document.getElementById("yes");
         const no = document.getElementById("no");
         const box = document.getElementById("yes-btn");
         const closed = document.getElementById("closed");
+       box.addEventListener("click",() => {
+            myAudio.muted = false;
+       })
         no.addEventListener("mouseover", () => {
             no.style.position = "absolute";
             const x = Math.floor((Math.random() * (window.innerWidth - 150)));
             const y = Math.floor(Math.random() * (window.innerHeight - 500));
             no.style.left = `${x}px`;
             no.style.top = `${y}px`;
-           
         });
         box.addEventListener("click",() => {
             
